@@ -61,16 +61,17 @@ if __name__ == "__main__":
         db = client.fdb                                 #use fdb database    
         fs = GridFS(db)                                     
         if mode==1:
-            print '                                                            registration mode'
+            print '-------------------------------------------------------------registration mode'
             current_finger = scan_finger(dev)
             current_finger_file_id = fs.put(current_finger, filename="employee")
             print 'Fingerprint saved with id: ' + str(current_finger_file_id)
         elif mode==2:
+#             python run some code when the program is killed by a signal
 #             signal.signal(signal.SIGABRT, cleanup)
 #             signal.signal(signal.SIGINT, cleanup)
 #             signal.signal(signal.SIGKILL, cleanup) http://crunchtools.com/unixlinux-signals-101/
 #             signal.signal(signal.SIGTERM, cleanup)
-            print '                                                            identification mode'
+            print '------------------------------------------------------------identification mode'
             while True:
                 cursor_for_files = db.fs.files.find()
                 all_fingerprint_files_ids = []
