@@ -3,12 +3,9 @@ Created on Aug 5, 2013
 
 @author: nik
 '''
-
-def register_user(fprint):
-    
-    
-    
+def sync_local():
     pass
 
-def save_info():
+def sync_server():
     pass
+
