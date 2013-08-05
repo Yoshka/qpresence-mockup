@@ -53,7 +53,7 @@ def cleanup(sig, func=None):
 if __name__ == "__main__":
 #     mode = 1 - registration mode
 #     mode = 2 - identification mode
-    mode = 1 
+    mode = 2 
     dev = detect_printreader()                          #try to detect fingerprint reader
      
     if dev !=None :
