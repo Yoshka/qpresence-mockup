@@ -13,7 +13,7 @@ def verify_finger(dev, fprints=None):
         fprint_list.append(pyfp.Fprint(serial_data = fprint))   
     print 'Place your finger on the reader'
     n, fp, img = dev.identify_finger(fprint_list) 
-    return n #return only index of the element 
+    return n, fp #return only index of the element 
 
 def scan_finger(dev):    
     print 'Place your finger on the reader'
@@ -50,10 +50,10 @@ def cleanup(sig, func=None):
     pyfp.fp_exit()
     sys.exit(1)
 
-if __name__ == "__main__":
+def start(mode = 2):
 #     mode = 1 - registration mode
 #     mode = 2 - identification mode
-    mode = 2 
+    #mode = 2 
     dev = detect_printreader()                          #try to detect fingerprint reader
      
     if dev !=None :

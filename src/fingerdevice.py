@@ -13,7 +13,7 @@ def verify_finger(dev, fprints=None):
     for fprint in fprints:
         fprint_list.append(pyfp.Fprint(serial_data = fprint))   
     n, fp, img = dev.identify_finger(fprint_list) 
-    return n #return only index of the element 
+    return n, fp #return only index of the element 
 
 def scan_finger(dev):    
     fprint, img = dev.enroll_finger()
