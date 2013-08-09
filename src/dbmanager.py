@@ -30,5 +30,5 @@ class DbManager:
             return all_fingerprint_files_data
     
     def check_no_fprints(self):
-        return len(self.db.fs.files.find()) > 0
+        return self.db.fs.files.count() > 0
         

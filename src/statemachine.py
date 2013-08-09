@@ -7,6 +7,7 @@ Created on Aug 6, 2013
 import fingerdevice as fdev
 import notifications as notificate 
 from Registration import registrator
+import msvcrt 
 
 class State:
     Undefined = 0
@@ -28,8 +29,8 @@ class StateMachine(object):
         self.db = dbManager
         
         self.start()
-        
-        
+    
+         
     def start(self):
         '''
         machine cycle initialization
@@ -38,31 +39,35 @@ class StateMachine(object):
             self.state = State.AdminRegistration
         else:
             self.state = State.RegularScan
-            
-        self.cycle()
+      
+        while True:    
+            self.cycle()
             
             
     def cycle(self):
         '''
         machine cycle
         '''
+        self.kbfunc()
         
         if self.state == State.RegularScan:
+            print 'RegularScan'
             pass        
         elif self.state == State.RegularRegistration:
             pass
         elif self.state == State.AdminRegistration:
+            print 'AdminRegistration'
             self.admin_registration()
         else:
             print 'Machine state error!!!!'
             
-        self.cycle()
         
     def admin_registration(self):
         '''
         Admin user registration function. Executes if no user records.  
         '''
         dev = fdev.detect_printreader()
+        self.state = State.RegularScan
         
         
             
