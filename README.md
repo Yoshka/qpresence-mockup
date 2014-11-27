@@ -1,4 +1,6 @@
-fingerprint
+qpresence mockup
 ===========
 
-fingerprint for rasbperry
+fingerprint/rasbperry
+upd. moved to gitlab repo
+
